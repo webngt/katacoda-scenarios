@@ -5,12 +5,15 @@
   "time": "2 minutes",
   "details": {
     "steps": [{
-      "title": "Step 1 - Run Command",
+      "title": "Step 1 - Setup Cluster",
       "text": "step1.md"
+    }],
+    "steps": [{
+      "title": "Step 2 - Install Additional components",
+      "text": "step2.md"
     }],
     "intro": {
       "text": "intro.md",
-      "code": "foreground.sh",
       "credits": ""
     },
     "finish": {
