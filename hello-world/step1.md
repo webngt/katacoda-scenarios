@@ -1,7 +1,5 @@
 This is your first step.
 
-## Task
+## Cluster setup
 
-This is an _example_ of creating a scenario and running a **command**
-
-`echo 'Hello World'`{{execute}}
+Make sure cluster is ready, run the command `launch.sh`{{execute}}.

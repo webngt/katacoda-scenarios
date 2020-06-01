@@ -1,1 +1,3 @@
-Welcome to your first Katacoda Scenario!
+## Story
+
+Once upon a time I decided to implement resilent application on Kubernetes
