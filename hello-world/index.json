@@ -7,8 +7,8 @@
     "steps": [{
       "title": "Step 1 - Setup Cluster",
       "text": "step1.md"
-    }],
-    "steps": [{
+    },
+    {
       "title": "Step 2 - Install Additional components",
       "text": "step2.md"
     }],
