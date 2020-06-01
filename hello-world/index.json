@@ -25,6 +25,6 @@
     "terminals": [{"name": "DashboardTerminal", "target": "host01"}]
   },
   "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
+    "imageid": "ubuntu:1804"
   }
 }
