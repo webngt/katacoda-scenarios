@@ -21,7 +21,8 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "terminals": [{"name": "DashboardTerminal", "target": "dashboard"}]
   },
   "backend": {
     "imageid": "kubernetes"
