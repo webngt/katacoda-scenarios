@@ -34,9 +34,9 @@
   "environment": {
     "uilayout": "terminal",
     "terminals": [
-      {"name": "KialiTerm", "target": "host01"},
-      {"name": "Bookinfo", "target": "host01"},
-      {"name": "Load", "target": "host01"},
+      {"name": "PF-Kiali", "target": "host01"},
+      {"name": "PF-App", "target": "host01"},
+      {"name": "EMU-Load", "target": "host01"},
       {"name": "ChaosTest", "target": "host01"}
     ]
   },
