@@ -8,6 +8,9 @@ cat <<EOF >> $HOME/.profile
 alias kubectl='sudo microk8s kubectl'
 EOF
 
+# ensurre home profile is initialized 
+. $HOME/.profile
+
 # inject local environment to bootstrap.sh
 cat <<EOF > $CNLAB_HOME/.env_sh
 create_node="no"
