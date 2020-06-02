@@ -10,7 +10,6 @@
     },
     {
       "title": "Step 2 - Run application",
-      "foreground": "bookinfo.sh",
       "text": "step2.md"
     },
     {
