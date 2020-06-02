@@ -23,7 +23,10 @@
   },
   "environment": {
     "uilayout": "terminal",
-    "terminals": [{"name": "DashboardTerminal", "target": "host01"}]
+    "terminals": [
+      {"name": "DashboardTerm", "target": "host01"},
+      {"name": "KialiTerm", "target": "host01"}
+    ]
   },
   "backend": {
     "imageid": "ubuntu:1804"
