@@ -1,2 +1,3 @@
-launch.sh
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+git clone https://github.com/webngt/upgraded-guacamole.git
+
+export ENV_TEST=xxx-yyy
