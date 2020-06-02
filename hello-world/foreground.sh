@@ -1,5 +1,5 @@
 # remove docker
-sudo apt remove -y docker.io && sudo apt autoremove -y
+sudo apt remove -y docker.io
 
 git clone https://github.com/webngt/upgraded-guacamole.git
 
