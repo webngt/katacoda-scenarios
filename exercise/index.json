@@ -10,7 +10,7 @@
     },
     {
       "title": "Step 2 - Run application",
-      "foreground": "/usr/local/bin/bookinfo.sh",
+      "foreground": "bookinfo.sh",
       "text": "step2.md"
     },
     {
