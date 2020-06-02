@@ -14,7 +14,7 @@ EOF
 # inject local environment to bootstrap.sh
 cat <<EOF > $CNLAB_HOME/.env_sh
 create_node="no"
-platform="Linux"
+platform="Linux-katacoda"
 alias snap='sudo snap'
 alias microk8s='sudo microk8s'
 EOF
