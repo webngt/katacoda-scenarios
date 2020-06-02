@@ -1,5 +1,5 @@
 # remove docker
-sudo DEBIAN_FRONTEND=noninteractive apt remove -y docker.io
+sudo DEBIAN_FRONTEND=noninteractive apt remove -y -q docker.io
 
 git clone https://github.com/webngt/upgraded-guacamole.git
 
