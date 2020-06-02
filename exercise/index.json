@@ -1,0 +1,34 @@
+{
+  "title": "Hello World Scenario",
+  "description": "Your First Scenario",
+  "difficulty": "beginner",
+  "time": "2 minutes",
+  "details": {
+    "steps": [{
+      "title": "Step 1 - Install Istio",
+      "text": "step1.md"
+    },
+    {
+      "title": "Step 2 - Excercise",
+      "text": "step2.md"
+    }],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal",
+    "terminals": [
+      {"name": "KialiTerm", "target": "host01"},
+      {"name": "Bookinfo", "target": "host01"}
+    ]
+  },
+  "backend": {
+    "imageid": "ubuntu:1804"
+  }
+}
