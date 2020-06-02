@@ -4,7 +4,7 @@ git clone https://github.com/webngt/upgraded-guacamole.git
 export CNLAB_HOME=$(pwd)/upgraded-guacamole
 
 # inject system wide aliases
-cat <<EOF >> $HOME/.bash_profile
+cat <<EOF >> $HOME/.profile
 alias kubectl='sudo microk8s kubectl'
 EOF
 
@@ -18,6 +18,6 @@ EOF
 
 $CNLAB_HOME/bootstrap.sh
 
-. $HOME/.bash_profile
+. $HOME/.profile
 token=$(kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
 kubectl -n kube-system describe secret $token
