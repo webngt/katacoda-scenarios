@@ -1,3 +1,6 @@
+# remove docker
+sudo apt remove -y docker.io && sudo apt autoremove -y
+
 git clone https://github.com/webngt/upgraded-guacamole.git
 
 # bootstrap microk8s cluster
