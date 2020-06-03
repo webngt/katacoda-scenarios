@@ -10,7 +10,7 @@ Install application and emulate load
 
 ## Emulate load
 
-1. Run ```watch -n 0.5 curl -o /dev/null -s -w %{http_code} [[HOST_IP]]:$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')/productpage```{{execute T4}}
+1. Run ```load.sh [[HOST_IP]]```{{execute T4}}
 
 ## Check application in Kiali
 

@@ -28,7 +28,8 @@
       "host01": [
           {"file": "bookinfo.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "chaostest.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "chaostest.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "load.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     }
   },
