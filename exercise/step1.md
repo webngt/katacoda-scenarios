@@ -1,10 +1,16 @@
 This is your first step.
 
-## Istio setup
+## Kubernetes
 
-1. Please wait until cluster is initialized
-1. Run installer script `/usr/local/bin/istio-install.sh`{{execute T1}}
-1. Check if pods are is READY state `kubectl get pods --all-namespaces`{{execute T1}}
+Please wait until cluster is initialized in terminal
+
+## Istio install
+
+Run installer script `/usr/local/bin/istio-install.sh`{{execute T1}}
+
+## Ready check
+
+Check if pods are is READY state `kubectl get pods --all-namespaces`{{execute T1}}
 
 ## TroubleShoot
 
