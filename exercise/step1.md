@@ -4,7 +4,7 @@ This is your first step.
 
 Please wait until cluster is initialized in terminal
 
-Ensure all cluster pods are in READY state before proceed any further `kubectl get pods --all-namespaces`{{execute T1}}
+Ensure all cluster pods are in READY state before proceed any further `kubectl get pods --all-namespaces`{{execute T1}} except for katacoda-cloud-provider it may stay in CrashLoopBackOff status
 
 ## Istio install
 
