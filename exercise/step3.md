@@ -1,6 +1,13 @@
-This is your second step.
+Chaos test application and try to fix the problem
 
 ## Chaos test
 
-1. Check pods and services READY status `kubectl -n bookinfo get services && kubectl -n bookinfo get pods`{{execute}}
-1. Check gateway `kubectl -n bookinfo get gateway`{{execute}}
+1. Run `chaostest.sh`{{execute T5}}
+
+## Identify the problem
+
+TODO
+
+## FixMe
+
+TODO
