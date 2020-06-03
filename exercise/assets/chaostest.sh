@@ -13,7 +13,7 @@ do
 
     echo "Killing pod ${TARGET_POD}"
 
-    kubectl delete pod $TARGET_POD
+    kubectl -n bookinfo delete pod $TARGET_POD
 
     sleep 1
 done
