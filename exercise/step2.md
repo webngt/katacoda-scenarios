@@ -18,7 +18,7 @@ URL: https://[[HOST_SUBDOMAIN]]-9080-[[KATACODA_HOST]].environments.katacoda.com
 
 ## Emulate load
 
-Run ```load.sh [[HOST_IP]]```{{execute T4}}
+Run `load.sh [[HOST_IP]]`{{execute T4}}
 
 ## Expose Kiali for browser access
 
