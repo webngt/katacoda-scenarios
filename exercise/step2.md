@@ -4,9 +4,7 @@ Install application and emulate load
 
 Run installer script `/usr/local/bin/bookinfo.sh`{{execute T1}}
 
-## Check application ready status
-
-Run `kubectl -n bookinfo get pods`{{execute T1}}
+Ensure all application pods are in READY state before proceed any further `kubectl -n bookinfo get pods`{{execute T1}}
 
 ## Expose application for browser access
 

@@ -4,6 +4,8 @@ This is your first step.
 
 Please wait until cluster is initialized in terminal
 
+Ensure all cluster pods are in READY state before proceed any further `kubectl get pods --all-namespaces`{{execute T1}}
+
 ## Istio install
 
 Run installer script `/usr/local/bin/istio-install.sh`{{execute T1}}
