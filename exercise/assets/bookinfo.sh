@@ -18,6 +18,8 @@ EOF
 
 kubectl describe namespace bookinfo
 
+cp /tmp/bookinfo-no-delopyment.yaml $istio_root/samples/bookinfo/platform/kube/bookinfo.yaml
+
 cat $istio_root/samples/bookinfo/platform/kube/bookinfo.yaml | kubectl -n bookinfo apply -f -
 
 cat $istio_root/samples/bookinfo/networking/bookinfo-gateway.yaml | kubectl -n bookinfo apply -f - 
