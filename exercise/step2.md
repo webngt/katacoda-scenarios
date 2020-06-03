@@ -1,25 +1,27 @@
-Install application and emulate load
+Подготовка к тестированию - установка приложения и необходимых инструментов диагностики
 
-## Install application
+## Установить приложение
 
-Run installer script `/usr/local/bin/bookinfo.sh`{{execute T1}}
+Запустите скрипт установки `/usr/local/bin/bookinfo.sh`{{execute T1}}
 
-Ensure all application pods are in READY state before proceed any further `kubectl -n bookinfo get pods`{{execute T1}}
+Убедитесь, что все поды приложения находятся в состоянии READY прежде чем двигаться дальшн `kubectl -n bookinfo get pods`{{execute T1}}
 
-Expose application for browser access `nohup kubectl port-forward svc/productpage 9080:9080 -n bookinfo --address 0.0.0.0 > /tmp/bookinfo-log.log 2>&1 </dev/null &`{{execute T1}}
+Чтобы посмотреть на работу приложения в браузере, выполните `nohup kubectl port-forward svc/productpage 9080:9080 -n bookinfo --address 0.0.0.0 > /tmp/bookinfo-log.log 2>&1 </dev/null &`{{execute T1}}  
 
-Open Application in browser: https://[[HOST_SUBDOMAIN]]-9080-[[KATACODA_HOST]].environments.katacoda.com/productpage
+Откройте приложение в браузере https://[[HOST_SUBDOMAIN]]-9080-[[KATACODA_HOST]].environments.katacoda.com/productpage
 
-## Emulate load
+## Запустите эмулятор нагрузки
 
-Run `nohup load.sh [[HOST_IP]] > /tmp/load.log 2>&1 </dev/null &`{{execute T1}}
+Выполните команду `nohup load.sh [[HOST_IP]] > /tmp/load.log 2>&1 </dev/null &`{{execute T1}}
 
-## Observe application with Kiali
+## Посмотреть топологию приложения в Kiali
 
-Port forward Kiali `nohup kubectl port-forward svc/kiali 20001:20001 -n istio-system --address 0.0.0.0 > /tmp/kiali-pf.log 2>&1 </dev/null &`{{execute T1}}
+Выполните следующую команду, чтобы сделать доступным Kiali в браузере `nohup kubectl port-forward svc/kiali 20001:20001 -n istio-system --address 0.0.0.0 > /tmp/kiali-pf.log 2>&1 </dev/null &`{{execute T1}}
 
-Open Kiali https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
+Откройте Kiali в браузере https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
+
+Лгин/пароль для входа в Kiali admin/admin
 
 ## TroubleShoot
 
-If something goes wrong reload page
+Если что-то не работает или зависаает, перезагрузите страницу и начните сценарий заново.

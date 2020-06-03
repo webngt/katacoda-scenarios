@@ -1,15 +1,13 @@
-Chaos test application and try to fix the problem
+Проведите хаос тестирования приложения и постарайтесь локализовать проблему
 
-## Chaos test application
+## Запуск хаос-теста
 
-Run `nohup chaostest.sh > /tmp/chaos.log 2>&1 </dev/null &`{{execute T1}} to randomly kill pods
+Выполните `nohup chaostest.sh > /tmp/chaos.log 2>&1 </dev/null &`{{execute T1}} чтобы начать цикл случайной остановки подов приложения
 
-## Identify the problem
+## Локализуйте проблему
 
-Use kiali to check how the application degrade over time. Maybe problem is somewhere in application deployment descriptor? 
+Посмотрите в Kiali, как происходит деградация приложения. Возможно ошибка была допущена в deployment descriptor? 
 
-Application was deployed using bookinfo.yaml
+## Исправьте
 
-## FixMe
-
-Use your favorite vi editor to identify and fix the problem `vi ~/istio-1.6.0/samples/bookinfo/platform/kube/bookinfo.yaml`{{execute T1}}
+Откройте deployment descriptor в своем любимом редакторе VI `vi ~/istio-1.6.0/samples/bookinfo/platform/kube/bookinfo.yaml`{{execute T1}}

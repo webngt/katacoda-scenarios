@@ -1,19 +1,19 @@
-This is your first step.
+Подготовка к тестированию - развертывание кластера
 
 ## Kubernetes
 
-Please wait until cluster is initialized in terminal
+Дождитесь подтверждения запуска кластера в терминале
 
-Ensure all cluster pods are in READY state before proceed any further `kubectl get pods --all-namespaces`{{execute T1}} except for katacoda-cloud-provider it may stay in CrashLoopBackOff status
+Убедитесь, что все кластеры находятстя в состоянии READY прежде чем двигаться дальше `kubectl get pods --all-namespaces`{{execute T1}} 
 
-## Istio install
+Исключение может быть сделано для katacoda-cloud-provider он может остаться в статуск CrashLoopBackOff, что никак не влияет на дальнейшие шаги
 
-Run installer script `/usr/local/bin/istio-install.sh`{{execute T1}}
+## Установка Istio
 
-## Ready check
+Запустите установку istio `/usr/local/bin/istio-install.sh`{{execute T1}}
 
-Check if pods are is READY state `kubectl get pods --all-namespaces`{{execute T1}}
+Проверьте, что все поды находятся в состоянии READY `kubectl get pods --all-namespaces`{{execute T1}}
 
 ## TroubleShoot
 
-If something goes wrong reload page
+Если что-то не работает или зависаает, перезагрузите страницу и начните сценарий заново.
