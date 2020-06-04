@@ -16,7 +16,11 @@
         ]
     },
     "environment": {
-        "uilayout": "terminal"
+        "showdashboard": true,
+        "dashboards": [
+            {"name": "OPA IDE", "port": 8080}
+        ],
+        "uilayout": "terminal-iframe"
     },
     "backend": {
         "imageid": "ubuntu"
