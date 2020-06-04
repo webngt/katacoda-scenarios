@@ -1,0 +1,1 @@
+git clone https://github.com/EvgenyZ54/rego_junit_test

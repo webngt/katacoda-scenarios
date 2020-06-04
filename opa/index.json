@@ -1,0 +1,27 @@
+{
+    "noindex": true,
+    "title": "OPA Playground",
+    "description": "Open Policy Agent playground",
+    "details": {
+        "intro": {
+            "text": "intro.md",
+            "code": "foreground.sh",
+            "credits": ""
+        },
+        "steps": [
+            {
+                "title": "Setup Open Policy Agent",
+                "text": "step1.md"
+            }
+        ]
+    },
+    "environment": {
+        "uieditorpath": "/root/rego_junit_test",
+        "showide": true,
+        "idePort": 23000,
+        "uilayout": "terminal"
+    },
+    "backend": {
+        "imageid": "ubuntu"
+    }
+}
