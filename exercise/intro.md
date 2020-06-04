@@ -9,5 +9,3 @@
 ## Теория
 
 Для успешного прохождения упражнения необходимо понимать основные концепции Kubernetes, включая ServiceTopology <https://kubernetes.io/docs/concepts/>
-
-![Running](./assets/kuber-concepts.png)
