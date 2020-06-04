@@ -8,7 +8,7 @@
 
 ![Running](./assets/running.png)
 
-Исключение может быть сделано для katacoda-cloud-provider он может остаться в статуск CrashLoopBackOff, что никак не влияет на дальнейшие шаги
+Исключение может быть сделано для katacoda-cloud-provider он может остаться в статусе CrashLoopBackOff, что никак не влияет на дальнейшие шаги
 
 ## Установка Istio
 
