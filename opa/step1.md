@@ -5,3 +5,7 @@ please wait for IDE to initialize in terminal
 1. add `/root/rego_junit_test` workspace folder to IDE and start playing with your OPA
 
 **WARNING:** Press Continue only if you're tired with OPA
+
+## Troubleshooting
+
+If somtheing goes wrong or hangs just reload the page
