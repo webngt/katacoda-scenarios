@@ -20,11 +20,5 @@
     },
     "backend": {
         "imageid": "ubuntu"
-    },
-    "assets": {
-        "host01": [
-            {"file": "settings.json", "target": "/tmp"}
-        ]
-      }
-  
+    }
 }
