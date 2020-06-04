@@ -1,5 +1,9 @@
-Start online IDE `nohup code-server --bind-addr=[[HOST_IP]] > /tmp/code-server.log 2>&1 </dev/null &`{{execute T1}}
+## Start online IDE 
 
-get password `cat ~/.config/code-server/config.yaml | grep password:`{{execute T1}}
+get IDE password `cat ~/.config/code-server/config.yaml | grep password:`{{execute T1}}
 
-login to IDE https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com
+login to OPA enabled IDE with password from terminal https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com 
+
+add `/root/rego_junit_test` to IDE's workspace and start playing with your OPA
+
+**WARNING:** Press Continue only if you're tired with OPA
