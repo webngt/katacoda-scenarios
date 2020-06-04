@@ -10,7 +10,7 @@
         },
         "steps": [
             {
-                "title": "Setup Open Policy Agent",
+                "title": "OPA IDE",
                 "text": "step1.md"
             }
         ]
