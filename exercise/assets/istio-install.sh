@@ -12,4 +12,4 @@ kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/immuta
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/traffic-policy.yaml)"
 
 kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/antiaffinity.yaml)"
-kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/replicas.yaml)"
+#kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/replicas.yaml)"
