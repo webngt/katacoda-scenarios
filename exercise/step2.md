@@ -8,9 +8,7 @@
 
 ![Running](./assets/running.png)
 
-Чтобы посмотреть на работу приложения в браузере, выполните `nohup kubectl port-forward svc/productpage 9080:9080 -n bookinfo --address 0.0.0.0 > /tmp/bookinfo-log.log 2>&1 </dev/null &`{{execute T1}}  
-
-Откройте приложение в браузере https://[[HOST_SUBDOMAIN]]-9080-[[KATACODA_HOST]].environments.katacoda.com/productpage
+Откройте приложение в браузере https://[[HOST_SUBDOMAIN]]-30128-[[KATACODA_HOST]].environments.katacoda.com/productpage
 
 ## Запустите эмулятор нагрузки
 
