@@ -16,14 +16,6 @@
 
 Выполните команду `nohup load.sh [[HOST_IP]] > /tmp/load.log 2>&1 </dev/null &`{{execute T1}}
 
-## Посмотреть топологию приложения в Kiali
-
-Выполните следующую команду, чтобы сделать доступным Kiali в браузере `nohup kubectl port-forward svc/kiali 20001:20001 -n istio-system --address 0.0.0.0 > /tmp/kiali-pf.log 2>&1 </dev/null &`{{execute T1}}
-
-Откройте Kiali в браузере https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
-
-Лгин/пароль для входа в Kiali admin/admin
-
 ## TroubleShoot
 
 Если что-то не работает или зависаает, перезагрузите страницу и начните сценарий заново.
