@@ -10,4 +10,4 @@
 
 ## Исправьте
 
-Откройте deployment descriptor в своем любимом редакторе VI `vi ~/istio-1.6.0/samples/bookinfo/platform/kube/bookinfo.yaml`{{execute T1}}
+`/root/istio-1.6.0/samples/bookinfo/platform/kube/bookinfo.yaml`{{open}}

@@ -35,7 +35,8 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
+    "uilayout": "editor-terminal",
+    "uisettings": "yaml",
     "terminals": [
       {"name": "PF_Kiali", "target": "host01", "command": "tail -F /tmp/kiali-pf.log"},
       {"name": "PF_App", "target": "host01", "command": "tail -F /tmp/bookinfo-log.log"},
