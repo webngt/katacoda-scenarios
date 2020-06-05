@@ -9,5 +9,5 @@ spec:
               - key: app
                 operator: In
                 values:
-                - web-store
+                - istio-ingressgateway
             topologyKey: "kubernetes.io/hostname"
