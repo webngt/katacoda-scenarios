@@ -30,7 +30,12 @@
           {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "chaostest.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "load.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "bookinfo-no-deployment.yaml", "target": "/tmp"}
+          {"file": "bookinfo-no-deployment.yaml", "target": "/tmp"},
+          {"file": "antiaffinity.yaml", "target": "/tmp"},
+          {"file": "nod-port.yaml", "target": "/tmp"},
+          {"file": "replicas.yaml", "target": "/tmp"},
+          {"file": "traffic-policy.yaml", "target": "/tmp"},
+          {"file": "immutable-ports.yaml", "target": "/tmp"}
       ]
     }
   },
