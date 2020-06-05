@@ -10,4 +10,4 @@
 
 ## Исправьте
 
-`/root/istio-1.6.0/samples/bookinfo/platform/kube/bookinfo.yaml`{{open}}
+`bookinfo.yaml`{{open}}

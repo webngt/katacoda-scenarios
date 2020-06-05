@@ -37,6 +37,7 @@
   "environment": {
     "uilayout": "editor-terminal",
     "uisettings": "yaml",
+    "uieditorpath": "/root/istio-1.6.0/samples/bookinfo/platform/kube",
     "terminals": [
       {"name": "PF_Kiali", "target": "host01", "command": "tail -F /tmp/kiali-pf.log"},
       {"name": "PF_App", "target": "host01", "command": "tail -F /tmp/bookinfo-log.log"},
