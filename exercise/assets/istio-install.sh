@@ -5,6 +5,8 @@ kubectl taint nodes --all node-role.kubernetes.io/master-
 
 [ ! -d "$HOME/istio-1.6.0/bin" ] && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.0 sh -
 export PATH=$HOME/istio-1.6.0/bin:$PATH
+rm $HOME/istio-1.6.0/samples/bookinfo/platform/kube/*
+
 istioctl install --set profile=demo --readiness-timeout='10m0s'
 
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/node-port.yaml)"
