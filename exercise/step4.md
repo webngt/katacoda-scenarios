@@ -37,5 +37,5 @@ done
 [*] Проверить yaml файлы сервисов приложения
 [*] Внести исправления в yaml файлы
 [ ] Перезапустить Istio
-[*] Выполнить команду `kubectl -n bookinfo apply -f <YAML сервиса приложения>`
+[*] Выполнить команду `kubectl -n bookinfo apply -f bookinfo.yaml`
 [ ] Удалить namespace приложения `kubectl delete namespace bookinfo`
