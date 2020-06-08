@@ -18,10 +18,10 @@ EOF
 
 kubectl describe namespace bookinfo
 
-cp /tmp/bookinfo-no-deployment.yaml $istio_root/samples/bookinfo/platform/kube/bookinfo.yaml
-cp /tmp/checklist.rego $istio_root/samples/bookinfo/platform/kube/checklist.rego
+cp /tmp/bookinfo-no-deployment.yaml $HOME/excercise/bookinfo.yaml
+cp /tmp/checklist.rego $HOME/excercise/checklist.rego
 
-cat $istio_root/samples/bookinfo/platform/kube/bookinfo.yaml | kubectl -n bookinfo apply -f -
+cat $HOME/excercise/bookinfo.yaml | kubectl -n bookinfo apply -f -
 
 cat $istio_root/samples/bookinfo/networking/bookinfo-gateway.yaml | kubectl -n bookinfo apply -f - 
 

@@ -3,11 +3,15 @@
 # untaint control plane
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
+# install opa
+curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+chmod 755 opa
+mv opa /usr/local/bin
+
 [ ! -d "$HOME/istio-1.6.0/bin" ] && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.0 sh -
 
 export PATH=$HOME/istio-1.6.0/bin:$PATH
-rm -rf $HOME/istio-1.6.0/samples/bookinfo/platform/kube
-mkdir $HOME/istio-1.6.0/samples/bookinfo/platform/kube
+mkdir $HOME/excercise
 
 istioctl install --set profile=demo --readiness-timeout='10m0s'
 
