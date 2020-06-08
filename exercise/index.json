@@ -45,14 +45,15 @@
           {"file": "replicas.yaml", "target": "/tmp"},
           {"file": "traffic-policy.yaml", "target": "/tmp"},
           {"file": "immutable-ports.yaml", "target": "/tmp"},
-          {"file": "checklist.rego", "target": "/tmp"}
+          {"file": "checklist.rego", "target": "/tmp"},
+          {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     }
   },
   "environment": {
     "uilayout": "editor-terminal",
     "uisettings": "yaml",
-    "uieditorpath": "/root/excercise",
+    "uieditorpath": "/root/exercise",
     "terminals": [
       {"name": "PF_Kiali", "target": "host01", "command": "tail -F /tmp/kiali-pf.log"},
       {"name": "EMU_Load", "target": "host01", "command": "tail -F /tmp/load.log"},

@@ -8,10 +8,16 @@
 
 Логин/пароль для входа в Kiali admin/admin
 
-## Архитектор проверяет CloudNative Checklist
+## CloudNative проверки объектов приложения
 
-В чек листе он видит он видит следующее нарушение стандарта.
+ProductPage `checklist.sh deployment productpage-v1`{{execute T1}}
 
-> Готовность к отказу и автоматическому самовосстановлению любого из компонентов приложения и внешних компонентов/сервисов, от которых оно зависит
+Ratings `checklist.sh deployment ratings-v1`{{execute T1}}
 
-Для того, чтобы проверить, как нарушения чеклиста влияют на работу приложения он просит хаос инженера запустить хаос тест. 
+Reviews `checklist.sh deployment reviews-v3`{{execute T1}}
+
+Details main instance `checklist.sh pod details-main`{{execute T1}}
+
+Details secondary instance `checklist.sh pod details-secondary`{{execute T1}}
+
+На следующем шаге, для того, чтобы понять, как нарушения проверок влияют на работу приложения, архитектор вместе с хаос инженером запускают хаос тест. 
