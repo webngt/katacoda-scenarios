@@ -11,7 +11,7 @@ mv opa /usr/local/bin
 [ ! -d "$HOME/istio-1.6.0/bin" ] && curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.0 sh -
 
 export PATH=$HOME/istio-1.6.0/bin:$PATH
-[ ! -d "$HOME/exercise" ] mkdir $HOME/exercise
+[ ! -d "$HOME/exercise" ] && mkdir $HOME/exercise
 
 # cni workaround
 ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'
@@ -20,7 +20,8 @@ ip link set cni0 down
 brctl delbr cni0
 kubectl scale deployment coredns --replicas=0 -n kube-system
 kubectl scale deployment coredns --replicas=2 -n kube-system
-kubectl wait -n kube-system deployment coredns --for condition=available --timeout=60s
+
+sleep 10
 
 kubectl get pods --all-namespaces
 

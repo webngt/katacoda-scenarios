@@ -12,5 +12,5 @@ kubectl scale deployment coredns --replicas=0 -n kube-system
 kubectl scale deployment coredns --replicas=2 -n kube-system
 kubectl wait -n kube-system deployment coredns --for condition=available --timeout=60s
 
-sleep 5
+sleep 10
 kubectl get pods --all-namespaces
