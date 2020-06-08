@@ -20,8 +20,8 @@ ip link set cni0 down
 brctl delbr cni0
 kubectl scale deployment coredns --replicas=0 -n kube-system
 kubectl scale deployment coredns --replicas=2 -n kube-system
+kubectl wait -n kube-system deployment coredns --for condition=available --timeout=60s
 
-sleep 5
 kubectl get pods --all-namespaces
 
 
