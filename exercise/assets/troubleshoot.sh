@@ -7,3 +7,9 @@ ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'
 ssh -o "StrictHostKeyChecking no" node01 'brctl delbr cni0'
 ip link set cni0 down
 brctl delbr cni0
+
+kubectl scale deployment coredns --replicas=0 -n kube-system
+kubectl scale deployment coredns --replicas=2 -n kube-system
+
+sleep 5
+kubectl get pods --all-namespaces
