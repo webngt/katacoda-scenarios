@@ -39,6 +39,7 @@
           {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "chaostest.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "load.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "troubleshoot.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "bookinfo-no-deployment.yaml", "target": "/tmp"},
           {"file": "antiaffinity.yaml", "target": "/tmp"},
           {"file": "node-port.yaml", "target": "/tmp"},

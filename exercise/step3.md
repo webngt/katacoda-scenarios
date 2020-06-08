@@ -8,6 +8,8 @@
 
 Логин/пароль для входа в Kiali admin/admin
 
+## Выдержка из чеклиста
+
 ## CloudNative проверки объектов приложения
 
 ProductPage `checklist.sh deployment productpage-v1`{{execute T1}}
