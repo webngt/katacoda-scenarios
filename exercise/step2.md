@@ -6,8 +6,6 @@
 
 Убедитесь, что все поды приложения находятся в состоянии Running прежде чем двигаться дальше `kubectl -n bookinfo get pods`{{execute T1}}
 
-![Running](./assets/running.png)
-
 Откройте приложение в браузере https://[[HOST_SUBDOMAIN]]-30128-[[KATACODA_HOST]].environments.katacoda.com/productpage
 
 ## Запустите эмулятор нагрузки
