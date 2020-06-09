@@ -10,12 +10,12 @@
       "verify": "step1-verify.sh"
     },
     {
-      "title": "Запустить приложение",
+      "title": "Bookinfo Application",
       "text": "step2.md",
       "verify": "step2-verify.sh"
     },
     {
-      "title": "Проверить чек лист",
+      "title": "Основные объекты приложения",
       "text": "step3.md",
       "verify": "step3-verify.sh"
     },
