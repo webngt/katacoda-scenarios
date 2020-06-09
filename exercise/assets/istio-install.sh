@@ -34,6 +34,12 @@ ssh -o "StrictHostKeyChecking no" node01 'brctl delbr cni0'
 ip link set cni0 down
 brctl delbr cni0
 kubectl scale deployment coredns --replicas=0 -n kube-system
+
+while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    echo "Ensure k8s is properly initialized..."
+    sleep 10
+done
+
 kubectl scale deployment coredns --replicas=2 -n kube-system
 
 while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
