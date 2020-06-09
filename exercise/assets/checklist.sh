@@ -1,3 +1,19 @@
-#!/bin/sh
+#!/bin/bash
 
-kubectl -n bookinfo get $1 $2 -o json | opa eval -I -d /root/exercise/checklist.rego "data.k8s.replica.count.apply_replicas_count" | jq '.result[0].expressions[0].value.msg'
+cat <<EOF 
+
+CloudNative checklist
+
+Свойства
+    5. Готовность к отказу и автоматическому самовосстановлению любого из компонентов приложения и внешних компонентов/сервисов, от которых оно зависит
+    3. Способность соблюдать нефункциональные требования при увеличении нагрузки послев добавления stateless экземпляров компонента
+
+Автоматическая проверка объектов:
+
+EOF
+
+check_object.sh deployment productpage-v1
+check_object.sh deployment ratings-v1
+check_object.sh deployment reviews-v3
+check_object.sh pod details-main
+check_object.sh pod details-secondary

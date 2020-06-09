@@ -22,10 +22,6 @@
     {
       "title": "Хаос тест",
       "text": "step4.md"
-    },
-    {
-      "title": "Исправить приложение",
-      "text": "step5.md"
     }
     ],
     "intro": {
@@ -50,7 +46,8 @@
           {"file": "traffic-policy.yaml", "target": "/tmp"},
           {"file": "immutable-ports.yaml", "target": "/tmp"},
           {"file": "checklist.rego", "target": "/tmp"},
-          {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "check_object.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     }
   },

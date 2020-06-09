@@ -1,57 +1,21 @@
-under construction.
+Применение способов диагностики отклонений от стандарта
 
-## Выдержка из чеклиста
+* CloudNative чеклист
+* Хаос тест
 
-## CloudNative проверки объектов приложения
+## CloudNative чеклист
 
-ProductPage `checklist.sh deployment productpage-v1`{{execute T1}}
+1. Сформируйте учебный чеклист `checklist.sh`{{execute T1}}
+2. Определите на основании чеклиста проблемные области
 
-Ratings `checklist.sh deployment ratings-v1`{{execute T1}}
+## Хаос тест
 
-Reviews `checklist.sh deployment reviews-v3`{{execute T1}}
+Хаос тест позволяет в динамике проследить, как влияют отклонения от стандарта на работоспособность приложения
 
-Details main instance `checklist.sh pod details-main`{{execute T1}}
+Запустите учебный хаос тест `nohup chaostest.sh > /tmp/chaos.log 2>&1 </dev/null &`{{execute T1}} 
 
-Details secondary instance `checklist.sh pod details-secondary`{{execute T1}}
+Проведите наблюдение в Kiali за динамикой работы приложения https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
 
-На следующем шаге, для того, чтобы понять, как нарушения проверок влияют на работу приложения, архитектор вместе с хаос инженером запускают хаос тест. 
+## Исправьте проблемы
 
-## Методика
-
-Случайным образом в цикле производим остановку подов (pods) приложения. 
-
-Для этого хаос инжененер подготовил скрипт автоматизациии. 
-
-```bash
-#!/bin/bash
-
-while true
-do
-    echo "Choosing a pod to kill..."
-    PODS=$(kubectl -n bookinfo get pods | grep -v NAME | awk '{print $1}')
-    POD_COUNT=$(kubectl -n bookinfo get pods | grep -v NAME | wc -l)
-    K=$(( ( $RANDOM % $POD_COUNT ) + 1))
-    TARGET_POD=$(kubectl -n bookinfo get pods | grep -v NAME | awk '{print $1}' | head -n ${K} | tail -n 1)
-    echo "Killing pod ${TARGET_POD}"
-    kubectl -n bookinfo delete pod $TARGET_POD
-    sleep 1
-done
-```
-
-## Запуск хаос-теста
-
-Выполните `nohup chaostest.sh > /tmp/chaos.log 2>&1 </dev/null &`{{execute T1}} 
-
-## Локализуйте проблему
-
-Архитектор наблюдает за деградацией приложения в Kiali.
-
-## Сформулируйте рекомендации по исправлению
-
->>Выбрать пункты, относящиеся к правильному пути решения<<
-[ ] Перезапустить кластер
-[*] Проверить yaml файлы сервисов приложения
-[*] Внести исправления в yaml файлы
-[ ] Перезапустить Istio
-[*] Выполнить команду `kubectl -n bookinfo apply -f bookinfo.yaml`
-[ ] Удалить namespace приложения `kubectl delete namespace bookinfo`
+Сформируйте архив из итогового чек-листа и  `archive.sh`{{execute T1}} и отправьте его вашему учебному руководителю. 
