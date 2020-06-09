@@ -2,8 +2,8 @@
 
 # ensure kubernetes is initialized
 while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    echo "Ensure k8s is properly initialized..."
     sleep 10
-    echo "Ensure k8s is properly initialized"
 done
 
 kubectl get pods --all-namespaces
@@ -31,20 +31,37 @@ kubectl scale deployment coredns --replicas=0 -n kube-system
 kubectl scale deployment coredns --replicas=2 -n kube-system
 
 while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    echo "Ensure k8s is properly initialized..."
     sleep 10
-    echo "Ensure k8s is properly initialized"
 done
 
-kubectl get pods --all-namespaces
 
 
 istioctl install --set profile=demo --readiness-timeout='10m0s'
+sleep 10
+
+# scale down istio ingress
+kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=0
+while [ "$(kubectl get pods -l app=istio-ingressgateway -n istio-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    echo "Scaling down istio-ingressgateway...."
+    sleep 10
+done
+
+# patch ingress gateway
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/immutable-ports.yaml)"
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/traffic-policy.yaml)"
-
 kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/antiaffinity.yaml)"
 
-#kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/replicas.yaml)"
-kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=0
+
 kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=2
+while [ "$(kubectl get pods -n istio-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    echo "Scaling up istio-ingressgateway...."
+    sleep 10
+done
+
+kubectl get pods -n istio-system
+echo "Done."
+
+
+# app=istio-ingressgateway
