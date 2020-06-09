@@ -1,23 +1,24 @@
-Для успешного прохождения упражнения убедитесь, что учебный кластер Kubernetes готов к работе
+Для успешного прохождения упражнения убедитесь, что учебный кластер Kubernetes и Istio Service Mesh готовы к работе
 
 ## Kubernetes
 
-Дождитесь подтверждения запуска кластера в терминале
+Дождитесь подтверждения запуска кластера в терминале, должно появиться такое сообщение
 
-Убедитесь, что все поды находятстя в состоянии Running прежде чем двигаться дальше `kubectl get pods --all-namespaces`{{execute T1}} 
+> **master $** launch.sh
+> Waiting for Kubernetes to start...
+> Kubernetes started
+
+Убедитесь, что все поды находятстя в состоянии Running прежде чем двигаться дальше `kubectl get pods --all-namespaces`{{execute T1}}
 
 Исключение может быть сделано для katacoda-cloud-provider он может остаться в статусе CrashLoopBackOff, что никак не влияет на дальнейшие шаги
 
-## Установка Istio
+## Istio
 
 Запустите установку istio `/usr/local/bin/istio-install.sh`{{execute T1}}
 
-Проверьте, что все поды находятся в состоянии Running `kubectl get pods --all-namespaces`{{execute T1}}
-Исключение может быть сделано для katacoda-cloud-provider он может остаться в статусе CrashLoopBackOff, что никак не влияет на дальнейшие шаги
+Проверьте, что все поды Istio в состоянии Running `kubectl get pods -n istio-system`{{execute T1}}
 
 ## TroubleShoot
 
-Если что-то не работает или зависаает, попробуйте следующие шаги: 
-
 * если зависла установка istio, запустите `troubleshoot.sh`{{execute interrupt T1}}, после выполнения этой команды повторно запустите `/usr/local/bin/istio-install.sh`{{execute T1}}
-* если описанный способ не помог заново откройте страницу упражнения и начните сценарий заново.
+* если описанный способ не помог, заново откройте страницу упражнения и начните сценарий заново.
