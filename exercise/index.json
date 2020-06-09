@@ -12,11 +12,12 @@
     {
       "title": "Запустить приложение",
       "text": "step2.md",
-      "verify": "step1-verify.sh"
+      "verify": "step2-verify.sh"
     },
     {
       "title": "Проверить чек лист",
-      "text": "step3.md"
+      "text": "step3.md",
+      "verify": "step3-verify.sh"
     },
     {
       "title": "Хаос тест",
