@@ -4,9 +4,13 @@
 
 Дождитесь подтверждения запуска кластера в терминале, должно появиться такое сообщение
 
+>
 > **master $** launch.sh
+>
 > Waiting for Kubernetes to start...
+>
 > Kubernetes started
+>
 
 Убедитесь, что все поды находятстя в состоянии Running прежде чем двигаться дальше `kubectl get pods --all-namespaces`{{execute T1}}
 
