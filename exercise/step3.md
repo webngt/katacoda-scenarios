@@ -1,25 +1,28 @@
-Архитектор приступает к изучению **текущей** топологии приложения
+Изучите топологию основных объектов приложения под нагрузкой
 
-## Посмотреть топологию приложения в Kiali
+## Запустите эмулятор нагрузки
+
+Выполните команду `nohup load.sh [[HOST_IP]] > /tmp/load.log 2>&1 </dev/null &`{{execute T1}}
+
+Вывод эмулятора нагрузки можно посмотреть во вкладке `EMU_Load`
+
+## Изучите топологию приложения
 
 Выполните следующую команду, чтобы сделать доступным Kiali в браузере `nohup kubectl port-forward svc/kiali 20001:20001 -n istio-system --address 0.0.0.0 > /tmp/kiali-pf.log 2>&1 </dev/null &`{{execute T1}}
 
 Откройте Kiali в браузере https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
 
-Логин/пароль для входа в Kiali admin/admin
+Логин/пароль для входа в Kiali `admin/admin`
 
-## Выдержка из чеклиста
+## Изучите дескрипторы основных объектов приложения
 
-## CloudNative проверки объектов приложения
-
-ProductPage `checklist.sh deployment productpage-v1`{{execute T1}}
-
-Ratings `checklist.sh deployment ratings-v1`{{execute T1}}
-
-Reviews `checklist.sh deployment reviews-v3`{{execute T1}}
-
-Details main instance `checklist.sh pod details-main`{{execute T1}}
-
-Details secondary instance `checklist.sh pod details-secondary`{{execute T1}}
-
-На следующем шаге, для того, чтобы понять, как нарушения проверок влияют на работу приложения, архитектор вместе с хаос инженером запускают хаос тест. 
+1. Services
+    1. Product Page
+    1. Details
+    1. Reviews
+    1. Ratings
+1. Deployments и Pods
+    1. Product Page
+    1. Details
+    1. Reviews
+    1. Ratings
