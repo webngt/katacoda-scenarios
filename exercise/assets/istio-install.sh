@@ -2,7 +2,7 @@
 
 # kubectl get pods --all-namespaces
 while [ "$(kubectl get pods --all-namespaces)" = "No resources found" ]; do 
-    echo "Ensure k8s is properly initialized..."
+    echo "Ensure k8s is properly initialized...No resources found"
     sleep 10
 done
 
