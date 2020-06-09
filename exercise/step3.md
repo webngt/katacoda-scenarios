@@ -16,14 +16,15 @@
 
 ## Изучите дескрипторы основных объектов приложения
 
-### Deployments и Pods
+* Deployments
+* Pods
 
-#### Product Page
+### Deployment: Product Page
 
 * получить дескриптор `kubectl -n bookinfo get deployment productpage-v1 -o yaml > /root/exercise/productpage-v1.yaml`{{execute T1}}
 * открыть дескриптор в редакторе `/root/exercise/productpage-v1.yaml`{{open}}
 
-#### Details
+### Pods: Details
 
 1. Main Pod
     * получить дескриптор `kubectl -n bookinfo get pod details-main -o yaml > /root/exercise/details-main.yaml`{{execute T1}}
@@ -32,12 +33,12 @@
     * получить дескриптор `kubectl -n bookinfo get pod details-secondary -o yaml > /root/exercise/details-secondary.yaml`{{execute T1}}
     * открыть дескриптор в редакторе `/root/exercise/details-secondary.yaml`{{open}}
 
-#### Reviews
+### Deployment: Reviews
 
 * получить дескриптор `kubectl -n bookinfo get deployment reviews-v3 -o yaml > /root/exercise/reviews-v3.yaml`{{execute T1}}
 * открыть дескриптор в редакторе `/root/exercise/reviews-v3.yaml`{{open}}
 
-#### Ratings
+### Deployment: Ratings
 
 * получить дескриптор `kubectl -n bookinfo get deployment ratings-v1 -o yaml > /root/exercise/ratings-v1.yaml`{{execute T1}}
 * открыть дескриптор в редакторе `/root/exercise/ratings-v1.yaml`{{open}}
