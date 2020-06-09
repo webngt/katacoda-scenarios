@@ -6,7 +6,8 @@
   "details": {
     "steps": [{
       "title": "Развернуть кластер",
-      "text": "step1.md"
+      "text": "step1.md",
+      "verify": "step1-verify.sh"
     },
     {
       "title": "Запустить приложение",
