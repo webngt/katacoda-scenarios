@@ -11,3 +11,7 @@
 ## Изучите логику приложения
 
 Откройте приложение в браузере https://[[HOST_SUBDOMAIN]]-30128-[[KATACODA_HOST]].environments.katacoda.com/productpage
+
+## TroubleShoot
+
+Если на этом этапе получаете ошибку BadGateway, перезагрузите страницу браузера и начните упражнение заново
