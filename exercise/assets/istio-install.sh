@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# kubectl get pods --all-namespaces
+while [ "$(kubectl get pods --all-namespaces)" = "No resources found" ]; do 
+    echo "Ensure k8s is properly initialized..."
+    sleep 10
+done
+
 # ensure kubernetes is initialized
 while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
     echo "Ensure k8s is properly initialized..."
