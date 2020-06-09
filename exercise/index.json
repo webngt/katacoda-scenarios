@@ -11,7 +11,8 @@
     },
     {
       "title": "Запустить приложение",
-      "text": "step2.md"
+      "text": "step2.md",
+      "verify": "step1-verify.sh"
     },
     {
       "title": "Проверить чек лист",
