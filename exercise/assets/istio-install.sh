@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# ensure kubernetes is initialized
+while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    sleep 10
+    echo "Ensure k8s is properly initialized"
+done
+
+kubectl get pods --all-namespaces
+
+
 # untaint control plane
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
@@ -21,7 +30,10 @@ brctl delbr cni0
 kubectl scale deployment coredns --replicas=0 -n kube-system
 kubectl scale deployment coredns --replicas=2 -n kube-system
 
-sleep 10
+while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
+    sleep 10
+    echo "Ensure k8s is properly initialized"
+done
 
 kubectl get pods --all-namespaces
 
