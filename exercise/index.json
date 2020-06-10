@@ -52,9 +52,11 @@
     }
   },
   "environment": {
-    "uieditorpath": "/root/exercise",
-    "showide": true,
-    "uilayout": "terminal",
+    "showdashboard": true,
+    "dashboards": [
+        {"name": "IDE", "port": 8080}
+    ],
+    "uilayout": "terminal-iframe",
     "terminals": [
       {"name": "PF_Kiali", "target": "host01", "command": "tail -F /tmp/kiali-pf.log"},
       {"name": "EMU_Load", "target": "host01", "command": "tail -F /tmp/load.log"},

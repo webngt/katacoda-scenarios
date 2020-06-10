@@ -20,6 +20,10 @@ Kubernetes started
 
 Проверьте, что все поды Istio в состоянии Running `kubectl get pods -n istio-system`{{execute T1}}
 
+## IDE password
+
+1. get IDE password `cat ~/.config/code-server/config.yaml | grep password:`{{execute T1}}
+
 ## TroubleShoot
 
 * если зависла установка istio, запустите `troubleshoot.sh`{{execute interrupt T1}}, после выполнения этой команды повторно запустите `/usr/local/bin/istio-install.sh`{{execute T1}}
