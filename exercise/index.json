@@ -52,9 +52,9 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal",
-    "uisettings": "yaml",
     "uieditorpath": "/root/exercise",
+    "showide": true,
+    "uilayout": "terminal",
     "terminals": [
       {"name": "PF_Kiali", "target": "host01", "command": "tail -F /tmp/kiali-pf.log"},
       {"name": "EMU_Load", "target": "host01", "command": "tail -F /tmp/load.log"},
