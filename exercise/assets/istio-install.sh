@@ -23,7 +23,7 @@ curl -sS -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
 chmod 755 opa
 mv opa /usr/local/bin
 
-[ ! -d "$HOME/istio-1.6.0/bin" ] && curl -sS -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.0 sh -
+[ ! -d "$HOME/istio-1.6.0/bin" ] && curl -sS -L https://istio.io/downloadIstio | ISTIO_VERSION=1.6.2 sh -
 
 export PATH=$HOME/istio-1.6.0/bin:$PATH
 [ ! -d "$HOME/exercise" ] && mkdir $HOME/exercise
