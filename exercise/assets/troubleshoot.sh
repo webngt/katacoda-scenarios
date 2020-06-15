@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=$HOME/istio-1.6.0/bin:$PATH istioctl manifest generate --set profile=demo |  kubectl delete -f -
+PATH=$HOME/istio-1.6.2/bin:$PATH istioctl manifest generate --set profile=demo |  kubectl delete -f -
 kubectl delete namespace istio
 
 ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'

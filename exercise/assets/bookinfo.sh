@@ -1,6 +1,7 @@
 #!/bin/sh
 
-istio_root=$HOME/istio-1.6.0
+export ISTIO_VERSION=1.6.2
+istio_root=$HOME/istio-$ISTIO_VERSION
 
 cat <<EOF | kubectl create -f -
 {
