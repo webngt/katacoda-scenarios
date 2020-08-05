@@ -4,15 +4,15 @@ function print_policy {
 
 
     echo -e "\e[32m"
-    echo $1 | jq -r ".allow[]"
+    echo "$1" | jq -r ".allow[]"
     echo -e "\e[0m"
 
     echo -e "\e[91m"
-    echo $1 | jq -r ".deny[]"
+    echo "$1" | jq -r ".deny[]"
     echo -e "\e[0m"
 
     echo -e "\e[91m"
-    echo $1 | jq -r ".err[]"
+    echo "$1" | jq -r ".err[]"
     echo -e "\e[0m"
 
 
@@ -37,8 +37,8 @@ deployments=$(kubectl -n bookinfo get deployments -o json | opa eval -f pretty -
 pods=$(kubectl -n bookinfo get pods -o json | opa eval -f pretty -I -d /tmp/pod.rego "data.k8s.pod.policy")
 replicasets=$(kubectl -n bookinfo get replicasets -o json | opa eval -f pretty -I -d /tmp/replicaset.rego "data.k8s.replicaset.policy")
 
-print_policy($deployments)
-print_policy($pods)
-print_policy($replicasets)
+print_policy "$deployments"
+print_policy "$pods"
+print_policy "$replicasets"
 
 
