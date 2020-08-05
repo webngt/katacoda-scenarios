@@ -3,23 +3,23 @@
 function print_policy {
 
 
-    echo -e "\e[32m"
-    echo "$1" | jq -r ".allow[]"
-    echo -e "\e[0m"
+    echo -en "\e[32m"
+    echo -n "$1" | jq -r ".allow[]"
+    echo -en "\e[0m"
 
-    echo -e "\e[91m"
-    echo "$1" | jq -r ".deny[]"
-    echo -e "\e[0m"
+    echo -en "\e[91m"
+    echo -n "$1" | jq -r ".deny[]"
+    echo -en "\e[0m"
 
-    echo -e "\e[91m"
-    echo "$1" | jq -r ".err[]"
-    echo -e "\e[0m"
+    echo -en "\e[91m"
+    echo -n "$1" | jq -r ".err[]"
+    echo -en "\e[0m"
 
 
 }
 
 
-echo -e "\e[93m"
+echo -en "\e[93m"
 cat <<EOF 
 
 CloudNative checklist
