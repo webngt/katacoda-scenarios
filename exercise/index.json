@@ -45,9 +45,10 @@
           {"file": "replicas.yaml", "target": "/tmp"},
           {"file": "traffic-policy.yaml", "target": "/tmp"},
           {"file": "immutable-ports.yaml", "target": "/tmp"},
-          {"file": "checklist.rego", "target": "/tmp"},
-          {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"},
-          {"file": "check_object.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+          {"file": "deployment.rego", "target": "/tmp"},
+          {"file": "pod.rego", "target": "/tmp"},
+          {"file": "replicaset.rego", "target": "/tmp"},
+          {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     }
   },
