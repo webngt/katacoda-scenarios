@@ -29,7 +29,8 @@
           {"file": "node-port.yaml", "target": "/tmp"},
           {"file": "replicas.yaml", "target": "/tmp"},
           {"file": "traffic-policy.yaml", "target": "/tmp"},
-          {"file": "immutable-ports.yaml", "target": "/tmp"}
+          {"file": "immutable-ports.yaml", "target": "/tmp"},
+          {"file": "immutable-port-kiali.yaml", "target": "/tmp"}
       ]
     }
   },
