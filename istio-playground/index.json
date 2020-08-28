@@ -1,0 +1,44 @@
+{
+  "title": "Cloud Native",
+  "description": "Что-то пошло не так",
+  "difficulty": "medium",
+  "time": "30 minutes",
+  "details": {
+    "steps": [{
+      "title": "Подготовить учебный кластер",
+      "text": "step1.md",
+      "verify": "step1-verify.sh"
+    },
+    {
+      "title": "Место для экспериментов",
+      "text": "step2.md"
+    }    
+    ],
+    "intro": {
+      "text": "intro.md",
+      "code": "foreground.sh",
+      "credits": ""
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+          {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+          {"file": "antiaffinity.yaml", "target": "/tmp"},
+          {"file": "node-port.yaml", "target": "/tmp"},
+          {"file": "replicas.yaml", "target": "/tmp"},
+          {"file": "traffic-policy.yaml", "target": "/tmp"},
+          {"file": "immutable-ports.yaml", "target": "/tmp"}
+      ]
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uisettings": "yaml",
+    "uieditorpath": "/root/exercise"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster-running:1.18"
+  }
+}
