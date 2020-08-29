@@ -77,4 +77,11 @@ echo "Done."
 kubectl -n istio-system patch service kiali -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
 
+kubectl -n istio-system patch service tracing -p "$(cat /tmp/node-port.yaml)"
+kubectl -n istio-system patch --type="merge" service tracing -p "$(cat /tmp/immutable-port-jaeger.yaml)"
+
+kubectl -n istio-system patch service grafana -p "$(cat /tmp/node-port.yaml)"
+kubectl -n istio-system patch --type="merge" service grafana -p "$(cat /tmp/immutable-port-grafana.yaml)"
+
+
 kubectl label namespace default istio-injection=enabled
