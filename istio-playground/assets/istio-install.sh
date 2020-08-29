@@ -2,13 +2,13 @@
 
 # kubectl get pods --all-namespaces
 while [ "$(kubectl get pods --all-namespaces)" = "No resources found" ]; do 
-    echo "Ensure k8s is properly initialized...No resources found"
+    echo "Wait for k8s is properly initialized...No resources found"
     sleep 10
 done
 
 # ensure kubernetes is initialized
 while [ "$(kubectl get pods -l app!=katacoda-cloud-provider -n kube-system -o=jsonpath='{.items[*].status.conditions[?(@.status == "False")].status}')" != "" ]; do 
-    echo "Ensure k8s is properly initialized..."
+    echo "Wait for k8s is properly initialized..."
     sleep 10
 done
 
@@ -25,7 +25,7 @@ export ISTIO_VERSION=1.6.8
 export PATH=$HOME/istio-$ISTIO_VERSION/bin:$PATH
 [ ! -d "$HOME/exercise" ] && mkdir $HOME/exercise
 
-# cni workaround
+# workaround for cni katacoda failing 
 ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'
 ssh -o "StrictHostKeyChecking no" node01 'brctl delbr cni0'
 ip link set cni0 down
@@ -77,6 +77,4 @@ echo "Done."
 kubectl -n istio-system patch service kiali -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
 
-kubectl -n default apply -f /tmp/4-label-default-namespace.yaml
-
-# app=istio-ingressgateway
+kubectl label namespace default istio-injection=enabled
