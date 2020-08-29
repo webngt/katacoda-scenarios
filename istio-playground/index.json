@@ -10,8 +10,12 @@
       "verify": "step1-verify.sh"
     },
     {
-      "title": "Место для экспериментов",
+      "title": "Знакомство с полигоном",
       "text": "step2.md"
+    },    
+    {
+      "title": "Пример без Istio Ingress Gateway",
+      "text": "step3.md"
     }    
     ],
     "intro": {
