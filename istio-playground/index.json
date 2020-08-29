@@ -30,7 +30,8 @@
           {"file": "replicas.yaml", "target": "/tmp"},
           {"file": "traffic-policy.yaml", "target": "/tmp"},
           {"file": "immutable-ports.yaml", "target": "/tmp"},
-          {"file": "immutable-port-kiali.yaml", "target": "/tmp"}
+          {"file": "immutable-port-kiali.yaml", "target": "/tmp"},
+          {"file": "4-label-default-namespace.yaml", "target": "/tmp"}
       ]
     }
   },

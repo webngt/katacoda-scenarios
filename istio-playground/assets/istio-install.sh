@@ -77,4 +77,6 @@ echo "Done."
 kubectl -n istio-system patch service kiali -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
 
+kubectl -n default apply -f /tmp/4-label-default-namespace.yaml
+
 # app=istio-ingressgateway
