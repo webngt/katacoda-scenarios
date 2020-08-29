@@ -1,6 +1,6 @@
 попробуйте выполнить следующий пример
 
-1. Изучите пример конфигурации `exercise/1_Telemetry/5-application-no-istio.yaml`{{open}}
+1. Изучите пример конфигурации `/root/exercise/1_Telemetry/5-application-no-istio.yaml`{{open}}
 1. Запустите пример `kubectl apply -f /root/exercise/1_Telemetry/5-application-no-istio.yaml`{{execute T1}}
 1. Убедитесь, что все поды приложения находятся состоянии Running прежде чем двигаться дальше `kubectl get pods`{{execute T1}}
 1. Откройте UI приложения https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/ и убедитесь, что вы видите работающее приложения трекинга водителей
