@@ -1,3 +1,4 @@
+spec:
   ports:
   - name: http
     port: 3000
