@@ -23,8 +23,8 @@ spec:
 
 1. Изучите пример конфигурации `/root/exercise/1_Telemetry/5-application-no-istio.yaml`. Для удобства вы его можете открыть во встроенном редакторе `/1_Telemetry/5-application-no-istio.yaml`{{open}}. 
 1. Запустите пример `kubectl apply -f /root/exercise/1_Telemetry/5-application-no-istio.yaml`{{execute T1}}
-1. Убедитесь, что все поды приложения находятся состоянии Running прежде чем двигаться дальше `kubectl get pods`{{execute T1}}
-1. Откройте UI приложения https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/ и убедитесь, что вы видите работающее приложения трекинга водителей. Так образом платформа Katacoda производит маппинг порта 30080 вашего полигона на внешние общедуоступные ссылки. 
+1. Важно. **Убедитесь, что все поды приложения находятся в статусе Running прежде чем двигаться дальше** `kubectl get pods`{{execute T1}}
+1. Откройте UI приложения https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/ и убедитесь, что вы видите работающее приложения трекинга водителей. Так платформа Katacoda производит маппинг порта 30080 вашего кластера на внешние общедуоступные ссылки.
 1. Повторите за автором модуля **"Istio Hands-On for Kubernetes"** все действия из раздела **"Section 5: Telemetry"** начиная с пункта **"16. Kiali Deeper Dive"**
 
 ## Удалить вcе объекты
@@ -32,5 +32,7 @@ spec:
 Прежде чем перейти к следующему шагу, удалите все объекты из текущего пространства имен `kubectl delete all --all`{{execute T1}}
 
 ## TroubleShoot
+
+Если что-то пошло не так:
 
 * перезагрузите страницу упражнения и начните сценарий заново.
