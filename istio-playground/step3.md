@@ -29,7 +29,7 @@ spec:
 
 ## Удалить все объекты
 
-Прежде чем перейти к следующему шагу, удалите все объекты из текущего пространства имен `kubectl delete all --all`{{execute T1}}
+Прежде чем перейти к следующему шагу, удалите все объекты из текущего пространства имен `kubectl delete all --all=true && kubectl delete gateways,virtualservices,destinationrules,serviceentries,sidecars --all=true`{{execute T1}}
 
 ## TroubleShoot
 
