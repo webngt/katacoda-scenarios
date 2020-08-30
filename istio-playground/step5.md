@@ -19,4 +19,4 @@
 
 ## Очистка объектов
 
-`kubectl delete all --all`{{execute T1}}
+`kubectl delete all --all=true && kubectl delete gateways,virtualservices,destinationrules,serviceentries,sidecars --all=true`{{execute T1}}
