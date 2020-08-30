@@ -2,7 +2,7 @@
   "title": "Istio playground",
   "description": "Здесь можно все",
   "difficulty": "medium",
-  "time": "30 minutes",
+  "time": "60 minutes",
   "details": {
     "steps": [{
       "title": "Подготовить учебный кластер",
@@ -16,15 +16,20 @@
     {
       "title": "Пример без Istio Ingress Gateway",
       "text": "step3.md"
+    },    
+    {
+      "title": "Использование Istio Ingress Gateway",
+      "text": "step4.md"
+    },   
+    {
+      "title": "Самостоятельная работа",
+      "text": "step5.md"
     }    
     ],
     "intro": {
       "text": "intro.md",
       "code": "foreground.sh",
       "credits": ""
-    },
-    "finish": {
-      "text": "finish.md"
     },
     "assets": {
       "host01": [
@@ -43,7 +48,8 @@
   "environment": {
     "uilayout": "editor-terminal",
     "uisettings": "yaml",
-    "uieditorpath": "/root/exercise"
+    "uieditorpath": "/root/exercise",
+    "hidefinish": true
   },
   "backend": {
     "imageid": "kubernetes-cluster-running:1.18"
