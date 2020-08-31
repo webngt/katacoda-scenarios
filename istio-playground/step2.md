@@ -16,6 +16,12 @@
 
 `git clone https://github.com/webngt/istio-handson.git /root/exercise`{{execute T1}}
 
+Список каталогов с исходники учебных примеров вы сможете найти используя терминал, выполнив команду `ls /root/exercise/`{{execute T1}}
+
+Также список примеров доступен в дереве редактора
+
+![Tree](./assets/tree.png)
+
 ## TroubleShoot
 
 Если что-то пошло не так:
