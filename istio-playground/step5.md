@@ -16,6 +16,8 @@
 
 ## Ссылки на приложения
 
+Внимание! Если вы очистили в конце предыдущего шага пространство имен от объектов приложения, то приведенные ниже ссылки будут доступны только после того, как вы самостоятельно осознанно повторите за автором модуля **"Istio Hands-On for Kubernetes"** один из его примеров.
+
 1. Доступ к приложению через IstioIngressGateway https://[[HOST_SUBDOMAIN]]-30128-[[KATACODA_HOST]].environments.katacoda.com/
 1. Доступ к приложению с использованием NodePort https://[[HOST_SUBDOMAIN]]-30080-[[KATACODA_HOST]].environments.katacoda.com/
 
