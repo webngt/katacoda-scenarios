@@ -1,7 +1,12 @@
 #!/bin/sh
 
-export ISTIO_VERSION=1.6.2
-istio_root=$HOME/istio-$ISTIO_VERSION
+# untaint control plane
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+# install opa
+curl -sS -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+chmod 755 opa
+mv opa /usr/local/bin
 
 cat <<EOF | kubectl create -f -
 {
