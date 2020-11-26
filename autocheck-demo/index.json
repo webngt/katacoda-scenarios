@@ -6,18 +6,15 @@
   "details": {
     "steps": [{
       "title": "Подготовить учебный кластер",
-      "text": "step1.md",
-      "verify": "step1-verify.sh"
+      "text": "step1.md"
     },
     {
       "title": "Bookinfo Application",
-      "text": "step2.md",
-      "verify": "step2-verify.sh"
+      "text": "step2.md"
     },
     {
       "title": "Основные объекты приложения",
-      "text": "step3.md",
-      "verify": "step3-verify.sh"
+      "text": "step3.md"
     },
     {
       "title": "Диагностика и исправление отклонений",
