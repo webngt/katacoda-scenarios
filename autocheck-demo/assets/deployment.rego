@@ -21,4 +21,4 @@ error[{"reason": reason, "item": item}] {
     reason:="Unexpected item.kind"
 }
 
-policy := { "allow": allow, "deny": deny, "err": error }
+policy := { "task_id": "replicas", "allow": allow, "deny": deny, "err": error }
