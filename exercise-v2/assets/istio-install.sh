@@ -70,6 +70,6 @@ kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=2
 echo "Check istio install..."
 sleep 10
 
-kubectl -n istio-system wait --for=condition=ContainersReady --timeout=60s --all pods
+kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
 
 echo "Done."
