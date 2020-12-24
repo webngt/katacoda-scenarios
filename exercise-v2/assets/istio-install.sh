@@ -8,7 +8,7 @@ ensure_label() {
 }
 
 # kubectl get pods --all-namespaces
-while [ "$(kubectl get pods --all-namespaces)" = "No resources found" ]; do 
+while [ "$(kubectl get pods --all-namespaces 2>&1)" = "No resources found" ]; do 
     echo "Ensure k8s is properly initialized..."
     sleep 10
 done
