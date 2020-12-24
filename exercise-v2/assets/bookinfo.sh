@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export ISTIO_VERSION=1.8.2
+export ISTIO_VERSION=1.8.1
 istio_root=$HOME/istio-$ISTIO_VERSION
 
 cat <<EOF | kubectl create -f -
