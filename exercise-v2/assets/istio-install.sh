@@ -34,7 +34,7 @@ ip link set cni0 down
 
 kubectl scale deployment coredns --replicas=0 -n kube-system
 
-while [ "$(kubectl -n kube-system get pods -l k8s-app=kube-dns 2>&1)" != "No resources found in istio-system namespace." ]; do 
+while [ "$(kubectl -n kube-system get pods -l k8s-app=kube-dns 2>&1)" != "No resources found in kube-system namespace." ]; do 
     echo "Scaling down core-dns..."
     sleep 5
 done
