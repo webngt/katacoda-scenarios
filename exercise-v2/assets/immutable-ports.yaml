@@ -5,10 +5,10 @@ spec:
     port: 15020
   - name: http2
     nodePort: 30128
-    port: 80
+    port: 8080
   - name: https
     nodePort: 31586
-    port: 443
+    port: 8443
   - name: tcp
     nodePort: 30894
     port: 31400
