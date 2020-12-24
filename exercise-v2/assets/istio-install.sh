@@ -33,8 +33,11 @@ ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'
 ip link set cni0 down
 
 kubectl scale deployment coredns --replicas=0 -n kube-system
-echo "Ensure k8s is properly initialized..."
-sleep 20
+
+while [ "$(kubectl -n kube-system get pods -l k8s-app=kube-dns 2>&1)" != "No resources found in istio-system namespace." ]; do 
+    echo "Scaling down core-dns..."
+    sleep 5
+done
 
 kubectl scale deployment coredns --replicas=2 -n kube-system
 
@@ -56,14 +59,23 @@ export PATH=$HOME/istio-$ISTIO_VERSION/bin:$PATH
 istioctl install -y --set profile=demo --readiness-timeout='10m0s'
 sleep 10
 
+kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
+
+kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=0
+
+while [ "$(kubectl -n istio-system get pods -l app=istio-ingressgateway 2>&1)" != "No resources found in istio-system namespace." ]; do 
+    echo "Scaling down istio ingress..."
+    sleep 5
+done
+
 # patch ingress gateway
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service istio-ingressgateway -p "$(cat /tmp/immutable-ports.yaml)"
-#kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/traffic-policy.yaml)"
-#kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/antiaffinity.yaml)"
+kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/traffic-policy.yaml)"
+kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/antiaffinity.yaml)"
 
 
-#kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=2
+kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=2
 
 echo "Check istio install..."
 sleep 10
