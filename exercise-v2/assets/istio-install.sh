@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ensure_label() {
-    while [ "$(kubectl -n $2 wait --for=condition=ContainersReady --timeout=5m pods -l $1)" = "error: no matching resources found" ]; do
+    while [ "$(kubectl -n $2 wait --for=condition=ContainersReady --timeout=5m pods -l $1 2>&1)" = "error: no matching resources found" ]; do
         echo "Retry..."
         sleep 20
     done
@@ -9,7 +9,7 @@ ensure_label() {
 
 # kubectl get pods --all-namespaces
 while [ "$(kubectl get pods --all-namespaces)" = "No resources found" ]; do 
-    echo "Ensure k8s is properly initialized...No resources found"
+    echo "Ensure k8s is properly initialized..."
     sleep 10
 done
 
@@ -52,7 +52,7 @@ export ISTIO_VERSION=1.8.1
 export PATH=$HOME/istio-$ISTIO_VERSION/bin:$PATH
 [ ! -d "$HOME/exercise" ] && mkdir $HOME/exercise
 
-istioctl install --set profile=demo --readiness-timeout='10m0s'
+istioctl install -y --set profile=demo --readiness-timeout='10m0s'
 sleep 10
 
 # scale down istio ingress
@@ -73,6 +73,3 @@ sleep 10
 kubectl -n istio-system wait --for=condition=ContainersReady --timeout=60s --all pods
 
 echo "Done."
-
-
-# app=istio-ingressgateway
