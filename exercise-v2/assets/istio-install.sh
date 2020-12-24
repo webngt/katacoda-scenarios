@@ -32,11 +32,12 @@ ssh -o "StrictHostKeyChecking no" node01 'ip link set cni0 down'
 ip link set cni0 down
 
 kubectl scale deployment coredns --replicas=0 -n kube-system
+echo "Ensure k8s is properly initialized..."
 sleep 20
 
 kubectl scale deployment coredns --replicas=2 -n kube-system
 
-ensure_label "k8s-app=kube-dns", "kube-system"
+ensure_label "k8s-app=kube-dns" "kube-system"
 
 
 # install opa
