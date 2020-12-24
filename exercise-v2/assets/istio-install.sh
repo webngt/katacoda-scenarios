@@ -84,6 +84,7 @@ helm install \
   kiali-server \
   kiali-server
 
+kubectl -n istio-system patch service kiali -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
 
 
