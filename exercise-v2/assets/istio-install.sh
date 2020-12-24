@@ -97,6 +97,8 @@ kubectl -n istio-system patch service kiali -p "$(cat /tmp/node-port.yaml)"
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
 
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/prometheus.yaml
+kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/jaeger.yaml
+
 
 kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
 
