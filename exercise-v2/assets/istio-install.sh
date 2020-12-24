@@ -74,11 +74,17 @@ sleep 10
 kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
 
 echo "Install Kiali..."
-kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/samples/addons/kiali.yaml
+
+snap install helm3
+
+helm install \
+  --namespace istio-system \
+  --set auth.strategy="anonymous" \
+  --repo https://kiali.org/helm-charts \
+  kiali-server \
+  kiali-server
+
 kubectl -n istio-system patch --type="merge" service kiali -p "$(cat /tmp/immutable-port-kiali.yaml)"
-
-
-kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
 
 
 echo "Done."
