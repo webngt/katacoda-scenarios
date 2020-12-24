@@ -60,7 +60,7 @@ kubectl -n istio-system scale deployment istio-ingressgateway  --replicas=0
 
 # patch ingress gateway
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/node-port.yaml)"
-kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/immutable-ports.yaml)"
+kubectl -n istio-system patch --type="merge" service istio-ingressgateway -p "$(cat /tmp/immutable-ports.yaml)"
 kubectl -n istio-system patch service istio-ingressgateway -p "$(cat /tmp/traffic-policy.yaml)"
 kubectl -n istio-system patch deployment istio-ingressgateway -p "$(cat /tmp/antiaffinity.yaml)"
 
