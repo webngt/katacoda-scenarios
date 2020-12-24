@@ -36,7 +36,7 @@
 
 Запустите хаос-тест `nohup chaostest.sh > /tmp/chaos.log 2>&1 </dev/null &`{{execute T1}}
 
-Проведите наблюдение в Kiali за динамикой работы приложения https://[[HOST_SUBDOMAIN]]-20001-[[KATACODA_HOST]].environments.katacoda.com
+Проведите наблюдение в Kiali за динамикой работы приложения https://[[HOST_SUBDOMAIN]]-31546-[[KATACODA_HOST]].environments.katacoda.com/
 
 ## Исправьте проблемы
 
