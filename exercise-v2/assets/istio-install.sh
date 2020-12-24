@@ -2,15 +2,16 @@
 
 ensure_label() {
     while [ "$(kubectl -n $2 wait --for=condition=ContainersReady --timeout=5m pods -l $1 2>&1)" = "error: no matching resources found" ]; do
-        echo "Retry..."
+        echo "No pod with label $1 found. Retry..."
         sleep 20
     done
 }
 
 # kubectl get pods --all-namespaces
+echo "Ensure k8s is properly initialized..."
 while [ "$(kubectl get pods --all-namespaces 2>&1)" = "No resources found" ]; do 
-    echo "Ensure k8s is properly initialized..."
-    sleep 10
+    echo "No cluster resource found. Retry..."
+    sleep 20
 done
 
 echo "Wait for core cluster containers to be ready..."
