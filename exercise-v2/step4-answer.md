@@ -2,7 +2,7 @@
 
 Удалите проблемные объекты Pod
 
-`kubectl -n bookinfo delete pod details-main && kubectl -n bookinfo delete pod details-secondary`{{execute T1}}
+`kubectl -n bookinfo delete pod details-main ; kubectl -n bookinfo delete pod details-secondary`{{execute T1}}
 
 Создайте файл дескриптора Deployment
 
