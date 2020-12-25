@@ -33,7 +33,7 @@ EOF
 echo -e "\e[0m"
 
 # policies
-deployments=$(kubectl -n bookinfo get deployments -o json | opa eval -f pretty -I -d all.rego "data.k8s.all.policy"")
+deployments=$(kubectl -n bookinfo get deployments,pods,replicasets -o json | opa eval -f pretty -I -d /tmp/all.rego "data.k8s.all.policy")
 
 print_policy "$deployments"
 
