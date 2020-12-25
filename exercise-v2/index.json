@@ -21,7 +21,8 @@
     },
     {
       "title": "Диагностика и исправление отклонений",
-      "text": "step4.md"
+      "text": "step4.md",
+      "answer": "step4-answer.md"
     }
     ],
     "intro": {
