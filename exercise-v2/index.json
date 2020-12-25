@@ -46,9 +46,7 @@
           {"file": "traffic-policy.yaml", "target": "/tmp"},
           {"file": "immutable-port-kiali.yaml", "target": "/tmp"},
           {"file": "immutable-ports.yaml", "target": "/tmp"},
-          {"file": "deployment.rego", "target": "/tmp"},
-          {"file": "pod.rego", "target": "/tmp"},
-          {"file": "replicaset.rego", "target": "/tmp"},
+          {"file": "all.rego", "target": "/tmp"},
           {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     }
