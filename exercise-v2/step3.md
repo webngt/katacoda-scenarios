@@ -12,9 +12,9 @@
 
 ## Изучите дескрипторы основных объектов приложения
 
-* сформировать файлы дескрипторов `all-descriptiors.sh`{{execute T1}}
-* открыть дескриптор в редакторе `productpage-v1.yaml`{{open}}
-* открыть дескриптор в редакторе `details-main.yaml`{{open}}
-* открыть дескриптор в редакторе `details-secondary.yaml`{{open}}
-* открыть дескриптор в редакторе `reviews-v3.yaml`{{open}}
-* открыть дескриптор в редакторе `ratings-v1.yaml`{{open}}
+* сформировать файлы дескрипторов `all-descriptors.sh`{{execute T1}}
+* открыть редакторе `productpage-v1.yaml`{{open}}
+* открыть редакторе `details-main.yaml`{{open}}
+* открыть редакторе `details-secondary.yaml`{{open}}
+* открыть редакторе `reviews-v3.yaml`{{open}}
+* открыть редакторе `ratings-v1.yaml`{{open}}
