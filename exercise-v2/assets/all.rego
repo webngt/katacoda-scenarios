@@ -4,14 +4,14 @@ allow[msg] {
   item := input.items[_] 
   item.kind == "Deployment"                   
   item.spec.replicas > 1 
-  msg := sprintf("Deployment '%v': Проверка на кол-во реплик пройдена. Реплик: %d", [item.metadata.name, item.spec.replicas])       
+  msg := sprintf("[STD-CN-SI-2] Deployment '%v': Проверка на кол-во реплик пройдена. Реплик: %d", [item.metadata.name, item.spec.replicas])       
 }
 
 deny[msg] {
   item := input.items[_]   
   item.kind == "Deployment"                 
   item.spec.replicas == 1 
-  msg := sprintf("Deployment '%v': Проверка на кол-во реплик не пройдена. Реплик: %d", [item.metadata.name, item.spec.replicas])       
+  msg := sprintf("[STD-CN-SI-2] Deployment '%v': Проверка на кол-во реплик не пройдена. Реплик: %d", [item.metadata.name, item.spec.replicas])       
 }
 
 
@@ -34,14 +34,14 @@ allow[msg] {
     item := input.items[_]                                                                                                         
     item.kind == "Pod"                   
     owner := all_owners_map[item.metadata.name]
-    msg := sprintf("Pod '%v': входит в %v '%v'", [item.metadata.name, owner.kind, owner.name])       
+    msg := sprintf("[STD-CN-RS-3.1] Pod '%v': входит в %v '%v'", [item.metadata.name, owner.kind, owner.name])       
 }
 
 deny[msg] {
   item := input.items[_]   
   item.kind == "Pod"                   
   not rs_owner_map[item.metadata.name]
-  msg := sprintf("Pod '%v': не использует абстракцию ReplicaSet", [item.metadata.name])       
+  msg := sprintf("[STD-CN-RS-3.1] Pod '%v': не использует абстракцию ReplicaSet", [item.metadata.name])       
 }
 
 deployment_owner_map[name] = owner {
@@ -63,14 +63,14 @@ allow[msg] {
     item := input.items[_]                                                                                                         
     item.kind == "ReplicaSet"                   
     owner := all_owners_map[item.metadata.name]
-    msg := sprintf("ReplicaSet '%v': входит в %v '%v'", [item.metadata.name, owner.kind, owner.name])       
+    msg := sprintf("[STD-CN-RS-3.1] ReplicaSet '%v': входит в %v '%v'", [item.metadata.name, owner.kind, owner.name])       
 }
 
 deny[msg] {
   item := input.items[_]   
   item.kind == "ReplicaSet"                   
   not deployment_owner_map[item.metadata.name]
-  msg := sprintf("ReplicaSet '%v': не использует абстракцию Deployment", [item.metadata.name])       
+  msg := sprintf("[STD-CN-RS-3.1] ReplicaSet '%v': не использует абстракцию Deployment", [item.metadata.name])       
 }
 
 
