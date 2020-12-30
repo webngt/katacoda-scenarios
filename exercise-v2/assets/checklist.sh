@@ -22,20 +22,21 @@ function print_policy {
 echo -en "\e[93m"
 cat <<EOF 
 
-CloudNative checklist
-
-Свойства
-    5. Готовность к отказу и автоматическому самовосстановлению любого из компонентов приложения и внешних компонентов/сервисов, от которых оно зависит
-    3. Способность соблюдать нефункциональные требования при увеличении нагрузки послев добавления stateless экземпляров компонента
-
 Автоматическая проверка объектов:
 EOF
 echo -e "\e[0m"
 
-# policies
-deployments=$(kubectl -n bookinfo get deployments,pods,replicasets -o json | opa eval -f pretty -I -d /tmp/all.rego "data.k8s.all.policy")
+objects=$(kubectl -n bookinfo get deployments,pods,replicasets,destinationrules,peerauthentications -o json 2>&1)
 
-print_policy "$deployments"
+# try without peerauthentications
+[ "$objects" = "No resources found" ] && objects=$(kubectl -n bookinfo get deployments,pods,replicasets,destinationrules -o json 2>&1)
+
+# give up
+[ "$objects" = "No resources found" ] && echo "$objects" && exit 1
+
+policy=$(echo "$objects" | opa eval -f pretty -I -d /tmp/all.rego "data.k8s.all.policy")
+
+print_policy "$policy"
 
 
 
