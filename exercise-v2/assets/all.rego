@@ -84,7 +84,7 @@ deny[msg] {
   item := input.items[_]   
   item.kind == "DestinationRule"                 
   item.spec.trafficPolicy != "ISTIO_MUTUAL"
-  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy=%v шифровение трафика выключено", [item.metadata.name, item.spec.trafficPolicy])       
+  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy=%v недопустимое значение", [item.metadata.name, item.spec.trafficPolicy])       
 }
 
 pa_list[pa] {

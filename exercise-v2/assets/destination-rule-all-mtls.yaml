@@ -20,7 +20,7 @@ spec:
   host: reviews
   trafficPolicy:
     tls:
-      mode: DISABLED
+      mode: DISABLE
   subsets:
   - name: v1
     labels:
