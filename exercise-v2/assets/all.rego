@@ -76,15 +76,15 @@ deny[msg] {
 allow[msg] {                                                                                                           
   item := input.items[_] 
   item.kind == "DestinationRule"                   
-  item.spec.trafficPolicy == "ISTIO_MUTUAL" 
-  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy=ISTIO_MUTUAL шифрование трафика включено", [item.metadata.name])       
+  item.spec.trafficPolicy.tls.mode == "ISTIO_MUTUAL" 
+  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy.tls.mode=ISTIO_MUTUAL шифрование трафика включено", [item.metadata.name])       
 }
 
 deny[msg] {
   item := input.items[_]   
   item.kind == "DestinationRule"                 
-  item.spec.trafficPolicy != "ISTIO_MUTUAL"
-  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy=%v недопустимое значение", [item.metadata.name, item.spec.trafficPolicy])       
+  item.spec.trafficPolicy.tls.mode != "ISTIO_MUTUAL"
+  msg := sprintf("[STD-CN-SI-2] DestinationRule '%v': trafficPolicy.tls.mode=%v шифрование не обеспечивается централизовано на уровне service mesh", [item.metadata.name, item.spec.trafficPolicy.tls.mode])       
 }
 
 pa_list[pa] {
@@ -95,7 +95,7 @@ pa_list[pa] {
 
 deny[msg] {
   count(pa_list) == 0
-  msg := sprintf("[STD-CN-SI-2] Нет объектов политики PeerAuthentication, шифрование трафика не гарантируется политикой")       
+  msg := "[STD-CN-SI-2] Нет объектов политики PeerAuthentication, шифрование трафика не гарантируется политикой"      
 }
 
 dr_list[dr] {
@@ -106,7 +106,7 @@ dr_list[dr] {
 
 deny[msg] {
   count(dr_list) == 0
-  msg := sprintf("[STD-CN-SI-2] Нет объектов DestinationRule, шифрование трафика не гарантируется")       
+  msg := "[STD-CN-SI-2] Нет объектов DestinationRule, шифрование трафика не гарантируется"    
 }
 
 
