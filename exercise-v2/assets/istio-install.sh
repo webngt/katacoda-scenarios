@@ -103,4 +103,18 @@ kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.8/sampl
 kubectl -n istio-system wait --for=condition=ContainersReady --timeout=5m --all pods
 
 
+# install Krew
+(
+  set -x; cd "$(mktemp -d)" &&
+  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/krew.tar.gz" &&
+  tar zxvf krew.tar.gz &&
+  KREW=./krew-"$(uname | tr '[:upper:]' '[:lower:]')_$(uname -m | sed -e 's/x86_64/amd64/' -e 's/arm.*$/arm/')" &&
+  "$KREW" install krew
+)
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# instal neat
+kubectl krew install neat
+
 echo "Done."

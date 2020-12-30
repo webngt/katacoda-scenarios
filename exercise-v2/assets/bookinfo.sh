@@ -19,10 +19,8 @@ EOF
 
 kubectl describe namespace bookinfo
 
-cp /tmp/bookinfo-no-deployment.yaml $HOME/exercise/bookinfo.yaml
+kubectl -n bookinfo apply -f /tmp/bookinfo-no-deployment.yaml
 
-cat $HOME/exercise/bookinfo.yaml | kubectl -n bookinfo apply -f -
-
-cat $istio_root/samples/bookinfo/networking/destination-rule-all-mtls.yaml | kubectl -n bookinfo apply -f -
+kubectl -n bookinfo apply -f /tmp/destination-rule-all-mtls.yaml
 
 echo "Ingress node port: $(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')"
