@@ -11,7 +11,7 @@ Test changes xxx
 
 открыть файл `test.txt`{{open}}
 
-copy-paste `echo "Hello"`{{copy}}
+copy-paste `echo "Hello World"`{{copy}}
 
 ## Kubernetes
 
