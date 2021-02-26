@@ -19,7 +19,7 @@ copy-paste `echo "Hello World"`{{copy}}
 
 ```
 master $ launch.sh
-Waiting for Kubernetes to start...
+Waiting for "привет" Kubernetes to start...
 Kubernetes started
 ```
 
