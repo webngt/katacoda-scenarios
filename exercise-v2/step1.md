@@ -11,6 +11,8 @@ Test changes xxx
 
 открыть файл `test.txt`{{open}}
 
+copy-paste `echo "Hello"`{{copy}}
+
 ## Kubernetes
 
 Дождитесь подтверждения запуска кластера в терминале, должно появиться такое сообщение
