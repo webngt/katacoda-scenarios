@@ -43,7 +43,7 @@
           {"file": "immutable-port-grafana.yaml", "target": "/tmp"},
           {"file": "immutable-port-jaeger.yaml", "target": "/tmp"}
       ],
-      "host01": [
+      "node01": [
           {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "antiaffinity.yaml", "target": "/tmp"},
           {"file": "node-port.yaml", "target": "/tmp"},
