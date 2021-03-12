@@ -2,7 +2,6 @@
 
 Test changes xxx
 
-&quot;
 
 На этом обязательном шаге вам необходимо выступить в роли DevOps инженера команды и подготовить необходимую инфраструктуру для успешного прохождения упражнения
 
@@ -28,6 +27,13 @@ Kubernetes started
 ## Istio
 
 Запустите установку istio `/usr/local/bin/istio-install.sh`{{execute T1}}
+
+
+
+`echo "Test" && echo "Test"`{{execute T1}}
+
+`echo &quot;Test&quot; && echo "Test"`{{execute T1}}
+
 
 Внимание! Установка может занять до 5 минут. 
 
