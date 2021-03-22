@@ -34,6 +34,24 @@
       "text": "finish.md"
     },
     "assets": {
+      "controlpane": [
+        {"file": "bookinfo.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "chaostest.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "load.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "troubleshoot.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "all-descriptors.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+        {"file": "bookinfo-no-deployment.yaml", "target": "/tmp"},
+        {"file": "destination-rule-all-mtls.yaml", "target": "/tmp"},
+        {"file": "antiaffinity.yaml", "target": "/tmp"},
+        {"file": "node-port.yaml", "target": "/tmp"},
+        {"file": "replicas.yaml", "target": "/tmp"},
+        {"file": "traffic-policy.yaml", "target": "/tmp"},
+        {"file": "immutable-port-kiali.yaml", "target": "/tmp"},
+        {"file": "immutable-ports.yaml", "target": "/tmp"},
+        {"file": "all.rego", "target": "/tmp"},
+        {"file": "checklist.sh", "target": "/usr/local/bin/", "chmod": "+x"}
+      ],
       "host01": [
           {"file": "bookinfo.sh", "target": "/usr/local/bin/", "chmod": "+x"},
           {"file": "istio-install.sh", "target": "/usr/local/bin/", "chmod": "+x"},
